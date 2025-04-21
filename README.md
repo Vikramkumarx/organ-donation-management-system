@@ -1,6 +1,6 @@
 # Organ-Donation-Management-System
 
-<img src= "https://github.com/Al-Shafi-Github/Organ-Donation-Management-System/assets/68460013/0862ba26-c16f-462f-824a-1d8564592bf6" alt= "Index">
+<img src= 
 <img src= "https://github.com/Al-Shafi-Github/Organ-Donation-Management-System/assets/68460013/67f33c41-06b6-4a6b-8351-3bd5d8f4e92c" alt= "Index">
 
 <img src= "https://github.com/Al-Shafi-Github/Organ-Donation-Management-System/assets/68460013/acb53bbd-1ad5-41b1-ae7c-9f2c2baebc60" alt= "Login">
