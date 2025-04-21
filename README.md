@@ -1,9 +1,9 @@
 # Organ-Donation-Management-System
 
 <img src="https://github.com/Vikramkumarx/organ-donation-management-system/blob/main/images/256832067-0862ba26-c16f-462f-824a-1d8564592bf6.png">
-<img src="https://github.com/Vikramkumarx/organ-donation-management-system/blob/main/images/image.png>
+<img src="https://github.com/Vikramkumarx/organ-donation-management-system/blob/main/images/image.png">
 
-<img src= "https://github.com/Vikramkumarx/organ-donation-management-system/blob/main/images/login.png">
+<img src="https://github.com/Vikramkumarx/organ-donation-management-system/blob/main/images/login.png">
 
 
 
