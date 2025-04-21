@@ -38,8 +38,8 @@ c
 <h2>Contact</h2>
 If you have any questions or suggestions regarding the project, please feel free to reach out to us:
 
-Email: abdullah.shafi1191@gmail.com
-LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/abdullah-al-shafi200/)https://www.linkedin.com/in/abdullah-al-shafi200/
+Email: vikram10072003@gmail.com
+LinkedIn: https://www.linkedin.com/in/vikram-kumar-51b9a1247/
 
 
 
