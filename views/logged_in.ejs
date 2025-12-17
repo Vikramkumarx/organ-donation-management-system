@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Lifeline Premium</title>
+  <link rel="stylesheet" href="/css/premium.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body style="background: #f8f9fa;">
+
+  <nav class="navbar-premium">
+    <a href="/logged_in" class="brand-logo">
+      <i class="fas fa-heartbeat"></i> Lifeline
+    </a>
+    <ul class="nav-links">
+      <li><a href="/logged_in">Home</a></li>
+      <li><a href="/available_to_donate">Donate</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/logout" style="color: var(--primary);">Logout</a></li>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="text-align: right;">
+        <div style="font-weight: 800; font-size: 0.9rem;">
+          <%= user.FIRST_NAME %>
+            <%= user.LAST_NAME %>
+        </div>
+        <div style="font-size: 0.75rem; color: #ff4d4d; font-weight: bold;">Verified Donor</div>
+      </div>
+      <div
+        style="width: 45px; height: 45px; background: #dfe6e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary);">
+        <i class="fas fa-user" style="color: #636e72;"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div style="padding: 60px 5%;">
+    <div style="margin-bottom: 50px;">
+      <h1 style="font-size: 2.5rem; font-weight: 800;">Welcome Back, <span style="color: var(--primary);">
+          <%= user.FIRST_NAME %>
+        </span>.</h1>
+      <p style="color: grey; font-size: 1.1rem; margin-top: 10px;">Your contributions are saving lives every day. What
+        would you like to do?</p>
+    </div>
+
+    <div class="dashboard-grid" style="padding: 0; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div
+            style="width: 60px; height: 60px; background: rgba(255, 77, 77, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+            <i class="fas fa-notes-medical" style="font-size: 1.8rem; color: var(--primary);"></i>
+          </div>
+          <h2 style="font-weight: 800; margin-bottom: 15px;">I Need an Organ</h2>
+          <p style="color: #636e72; line-height: 1.6; margin-bottom: 30px;">Submit a priority request to our global
+            donor database. We'll match you with compatible donors immediately.</p>
+        </div>
+        <a href="/organ_requests" class="btn-premium btn-primary-p" style="text-align: center;">New Request</a>
+      </div>
+
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div
+            style="width: 60px; height: 60px; background: rgba(46, 204, 113, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+            <i class="fas fa-hands-helping" style="font-size: 1.8rem; color: #2ecc71;"></i>
+          </div>
+          <h2 style="font-weight: 800; margin-bottom: 15px;">I Want to Donate</h2>
+          <p style="color: #636e72; line-height: 1.6; margin-bottom: 30px;">Browse active requests matching your blood
+            group. You can save up to 8 lives with one donation.</p>
+        </div>
+        <a href="/available_to_donate" class="btn-premium btn-secondary"
+          style="background: #2ecc71; color: white; text-align: center;">View Requests</a>
+      </div>
+
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div
+            style="width: 60px; height: 60px; background: rgba(52, 152, 219, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+            <i class="fas fa-history" style="font-size: 1.8rem; color: #3498db;"></i>
+          </div>
+          <h2 style="font-weight: 800; margin-bottom: 15px;">My Impact History</h2>
+          <p style="color: #636e72; line-height: 1.6; margin-bottom: 30px;">Track your past donations and pending
+            requests. Download your verified donor certificates here.</p>
+        </div>
+        <a href="/donation_record" class="btn-premium btn-outline-p" style="text-align: center;">My Records</a>
+      </div>
+
+    </div>
+
+    <!-- Impact Analytics -->
+    <div class="glass-card"
+      style="margin-top: 50px; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+      <div style="flex: 1; min-width: 300px;">
+        <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 15px;">System Pulse</h3>
+        <p style="opacity: 0.7;">Over 12,000 matches made this month alone. Our network is growing stronger thanks to
+          users like you.</p>
+      </div>
+      <div style="display: flex; gap: 40px;">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">4.8k</div>
+          <div style="font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">Live Donors
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: #2ecc71;">92%</div>
+          <div style="font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">Match Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

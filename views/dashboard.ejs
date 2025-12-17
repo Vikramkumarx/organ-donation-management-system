@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Command Center | Premium</title>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body style="background-color: #f0f2f5;">
+
+    <nav class="navbar-premium">
+        <a href="/dashboard" class="brand-logo" style="color: var(--secondary);">
+            <i class="fas fa-user-shield"></i> Admin Panel
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Public Site</a></li>
+            <li><a href="/dashboard">Overview</a></li>
+            <li><a href="/logout" style="color: var(--primary);">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div style="padding: 40px 5%;">
+        <div style="margin-bottom: 40px;">
+            <h1 style="font-weight: 800; font-size: 2.5rem;">Command <span
+                    style="color: var(--primary);">Overview</span></h1>
+            <p style="color: grey;">Live statistics and system monitoring.</p>
+        </div>
+
+        <div class="dashboard-grid" style="padding: 0;">
+            <div class="stat-card" style="background: linear-gradient(135deg, #4834d4, #686de0);">
+                <p>Total Registered Users</p>
+                <h3>
+                    <%= users.length %>
+                </h3>
+                <i class="fas fa-users"
+                    style="position: absolute; right: 20px; bottom: 20px; opacity: 0.2; font-size: 3rem;"></i>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #eb4d4b, #ff7979);">
+                <p>Open Requests</p>
+                <h3>
+                    <%= requests.length %>
+                </h3>
+                <i class="fas fa-hand-holding-heart"
+                    style="position: absolute; right: 20px; bottom: 20px; opacity: 0.2; font-size: 3rem;"></i>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #6ab04c, #badc58);">
+                <p>Verified Donors</p>
+                <h3>
+                    <%= donors.length %>
+                </h3>
+                <i class="fas fa-medal"
+                    style="position: absolute; right: 20px; bottom: 20px; opacity: 0.2; font-size: 3rem;"></i>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #f0932b, #ffbe76);">
+                <p>Success Stories</p>
+                <h3>
+                    <%= records.length %>
+                </h3>
+                <i class="fas fa-star"
+                    style="position: absolute; right: 20px; bottom: 20px; opacity: 0.2; font-size: 3rem;"></i>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <div class="glass-card" style="padding: 0; overflow: hidden; border: none;">
+                <div
+                    style="padding: 20px; background: white; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="font-size: 1.2rem; font-weight: 800;">User Management</h2>
+                    <button class="btn-premium btn-primary-p" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Export
+                        Reports</button>
+                </div>
+                <div class="premium-table-container" style="margin: 0; box-shadow: none;">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Contact info</th>
+                                <th>Blood</th>
+                                <th>Registration Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach(u=> { %>
+                                <tr>
+                                    <td style="font-weight: bold; color: var(--primary);">#<%= u.REGISTRATION_ID %>
+                                    </td>
+                                    <td>
+                                        <div style="font-weight: 600;">
+                                            <%= u.FIRST_NAME %>
+                                                <%= u.LAST_NAME %>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: grey;">
+                                            <%= u.EMAIL %>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <%= u.phoneR %>
+                                    </td>
+                                    <td><span
+                                            style="background: #ffeaa7; padding: 4px 10px; border-radius: 4px; font-weight: bold;">
+                                            <%= u.BLOOD_GROUPr %>
+                                        </span></td>
+                                    <td style="color: grey;">18 Dec 2025</td>
+                                    <td>
+                                        <form action="/delete_user/<%= u.REGISTRATION_ID %>" method="post"
+                                            onsubmit="return confirm('Archive this user?')">
+                                            <button type="submit"
+                                                style="background: none; border: none; color: #ff7675; cursor: pointer; font-size: 1.2rem;"
+                                                title="Delete User">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 25px;">Active <span
+                    style="color: #ff4d4d;">Requests</span></h2>
+            <div class="premium-table-container" style="margin: 0;">
+                <table class="premium-table">
+                    <thead>
+                        <tr>
+                            <th>Recipient</th>
+                            <th>Organ</th>
+                            <th>Urgency</th>
+                            <th>Quantity</th>
+                            <th>Request Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% requests.forEach(r=> { %>
+                            <tr>
+                                <td style="font-weight: 600;">
+                                    <%= r.FIRST_NAME %>
+                                        <%= r.LAST_NAME %>
+                                </td>
+                                <td><i class="fas fa-vial" style="color: var(--primary); margin-right: 8px;"></i>
+                                    <%= r.ORGAN_TYPE %>
+                                </td>
+                                <td>
+                                    <span
+                                        style="background: <%= r.REQUEST_TYPE === 'Emergency' ? '#ff7675' : '#55efc4' %>; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight:bold;">
+                                        <%= r.REQUEST_TYPE %>
+                                    </span>
+                                </td>
+                                <td>
+                                    <%= r.QUANTITY %> Unit
+                                </td>
+                                <td style="color: grey;">
+                                    <%= r.REQUEST_TIME %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

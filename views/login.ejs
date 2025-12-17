@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Lifeline Premium</title>
+  <link rel="stylesheet" href="/css/premium.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body
+  style="height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+
+  <div class="glass-card" style="width: 100%; max-width: 450px; padding: 3rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="/" class="brand-logo" style="justify-content: center; margin-bottom: 1rem;">
+        <i class="fas fa-heartbeat"></i> Lifeline
+      </a>
+      <h2 style="font-weight: 800; font-size: 1.5rem;">Welcome Back</h2>
+      <p style="color: grey; margin-top: 5px;">Secure access to your health dashboard.</p>
+    </div>
+
+    <form action="/login" method="post">
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Email
+          Address</label>
+        <input type="email" name="EMAIL" required
+          style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #ddd; outline: none; transition: 0.3s;"
+          onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#ddd'">
+      </div>
+      <div style="margin-bottom: 2rem;">
+        <label
+          style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Password</label>
+        <input type="password" name="PASS_WORD" required
+          style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #ddd; outline: none; transition: 0.3s;"
+          onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#ddd'">
+      </div>
+
+      <button type="submit" class="btn-premium btn-primary-p" style="width: 100%; margin-bottom: 1.5rem;">Sign
+        In</button>
+    </form>
+
+    <div style="text-align: center; font-size: 0.9rem;">
+      <span style="color: grey;">New to Lifeline?</span>
+      <a href="/register"
+        style="color: var(--primary); text-decoration: none; font-weight: 600; margin-left: 5px;">Create Account</a>
+    </div>
+
+    <div style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1.5rem; text-align: center;">
+      <p style="font-size: 0.75rem; color: #b2bec3;">By signing in, you agree to our <br>Medical Ethics & Privacy
+        Policy.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

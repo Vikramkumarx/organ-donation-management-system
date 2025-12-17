@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Requests | Lifeline Premium</title>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body style="background: #f8f9fa;">
+
+    <nav class="navbar-premium">
+        <a href="/logged_in" class="brand-logo"><i class="fas fa-heartbeat"></i> Lifeline</a>
+        <ul class="nav-links">
+            <li><a href="/logged_in">Home</a></li>
+            <li><a href="/organ_requests">Request</a></li>
+            <li><a href="/logout" style="color: var(--primary);">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div style="padding: 60px 5%;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h1 style="font-size: 2.5rem; font-weight: 800;">Available <span
+                        style="color: #2ecc71;">Opportunities</span></h1>
+                <p style="color: grey; margin-top: 10px;">Matching requests for your blood group: <span
+                        style="color: var(--primary); font-weight: 800;">
+                        <%= user.BLOOD_GROUPr %>
+                    </span></p>
+            </div>
+            <div style="background: white; padding: 15px 30px; border-radius: 15px; box-shadow: var(--shadow);">
+                <div style="font-size: 0.8rem; color: grey; text-transform: uppercase; font-weight: 600;">Compatible
+                    Matches</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: #2ecc71;">
+                    <%= requests.length %>
+                </div>
+            </div>
+        </div>
+
+        <% if (requests.length===0) { %>
+            <div class="glass-card" style="text-align: center; padding: 100px 20px;">
+                <i class="fas fa-search" style="font-size: 4rem; color: #eee; margin-bottom: 30px;"></i>
+                <h2 style="font-weight: 800; color: #b2bec3;">No matches yet</h2>
+                <p style="color: #b2bec3;">We'll notify you as soon as a compatible request is made.</p>
+            </div>
+            <% } else { %>
+                <div class="premium-table-container">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th>Recipient</th>
+                                <th>Organ</th>
+                                <th>Urgency</th>
+                                <th>Location</th>
+                                <th>Required By</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% requests.forEach(req=> { %>
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 600;">
+                                            <%= req.FIRST_NAME %>
+                                                <%= req.LAST_NAME %>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: grey;">
+                                            <%= req.phoneN %>
+                                        </div>
+                                    </td>
+                                    <td><span style="font-weight: bold; color: var(--primary);">
+                                            <%= req.ORGAN_TYPE %>
+                                        </span></td>
+                                    <td>
+                                        <span
+                                            style="background: <%= req.REQUEST_TYPE === 'Emergency' ? '#ff7675' : '#55efc4' %>; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight:bold;">
+                                            <%= req.REQUEST_TYPE %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <%= req.ADD_RESSn %>
+                                    </td>
+                                    <td style="color: grey;">
+                                        <%= req.REQUEST_TIME %>
+                                    </td>
+                                    <td>
+                                        <a href="/donate/<%= req.REQUEST_ID %>" class="btn-premium btn-primary-p"
+                                            style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Donate Now</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+    </div>
+
+</body>
+
+</html>

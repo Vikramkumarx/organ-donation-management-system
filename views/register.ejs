@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Lifeline | Premium Registration</title>
+  <link rel="stylesheet" href="/css/premium.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body
+  style="padding: 100px 5%; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+  <div class="glass-card" style="width: 100%; max-width: 800px; padding: 4rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <a href="/" class="brand-logo" style="justify-content: center; margin-bottom: 1rem;">
+        <i class="fas fa-heartbeat"></i> Lifeline
+      </a>
+      <h2 style="font-weight: 800; font-size: 2rem;">Become a Life Saver</h2>
+      <p style="color: grey; margin-top: 5px;">Join thousands of heroes in our organ donation network.</p>
+    </div>
+
+    <form action="/register" method="post">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">First
+            Name</label>
+          <input type="text" name="FIRST_NAME" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Last
+            Name</label>
+          <input type="text" name="LAST_NAME" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Date
+            of Birth</label>
+          <input type="date" name="dateofbirth" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Blood
+            Group</label>
+          <select name="BLOOD_GROUPr" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; background: white;">
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label
+            style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Gender</label>
+          <select name="Gender" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; background: white;">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Email
+            Address</label>
+          <input type="email" name="EMAIL" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label
+            style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Password</label>
+          <input type="password" name="PASS_WORD" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label
+            style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Confirm
+            Password</label>
+          <input type="password" name="confirm_password" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Phone
+            Number</label>
+          <input type="text" name="phoneR" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+        <div class="form-group">
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Zip
+            Code</label>
+          <input type="text" name="ZIP_CODE" required
+            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+        </div>
+      </div>
+
+      <div class="form-group" style="grid-column: span 2; margin-top: 20px;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #636e72;">Full
+          Address</label>
+        <input type="text" name="ADD_RESSr" required
+          style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none;">
+      </div>
+
+      <div style="margin: 30px 0; display: flex; align-items: center; gap: 10px;">
+        <input type="checkbox" required style="width: 18px; height: 18px; accent-color: var(--primary);">
+        <label style="font-size: 0.85rem; color: #636e72;">I agree to the <a href="#"
+            style="color: var(--primary);">Donor Ethics Declaration</a></label>
+      </div>
+
+      <button type="submit" class="btn-premium btn-primary-p" style="width: 100%; padding: 1rem;">Complete
+        Registration</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">
+      <span style="color: grey;">Already registered?</span>
+      <a href="/login" style="color: var(--primary); text-decoration: none; font-weight: 600; margin-left: 5px;">Sign In
+        here</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
